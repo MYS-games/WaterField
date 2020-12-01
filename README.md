@@ -27,6 +27,8 @@
 
 -	השחקן יראה את הדמות שלו מלמעלה ואת העולם הקרוב אליו.
 
+<img src="https://user-images.githubusercontent.com/57191216/100806404-0cf38c00-3439-11eb-8554-a8da6b3448f7.jpeg" width="500" height="400">
+
 #### מה עושים:
 
 - **תהליך ההתחלה:**   
@@ -53,9 +55,14 @@
 
 - בעולם יש עוד מספר מכשולים שהם גם מסתורים (קירות, גבעות ועוד).
 
+<img src="https://user-images.githubusercontent.com/57191216/100806275-d453b280-3438-11eb-9f39-8f609724ebc0.jpeg" width="400" height="400">
+
+#### העולם:
 #### המשאבים:
 
 -	שחקן ידע בכל רגע מה מצבו מבחינת רטיבות במשחק וכמות המטבעות שברשותו ויראה בזמן אמת ירידה/עלייה בהם ע"י מד שיוצג בצד המסך.
+
+<img src="https://user-images.githubusercontent.com/57191216/100806086-850d8200-3438-11eb-8c1b-bdf4a8c8f03a.jpeg" width="500" height="300">
 
 #### העולם:
 
@@ -72,7 +79,7 @@
 - הדמויות יהיו זהות אך בצבעים שונים.
 -	כל שחקן ינסה למנוע מהאחרים לנצח כיוון שיש רק מנצח אחד.
 
-
+<img src="https://user-images.githubusercontent.com/57191216/100804496-a3be4980-3435-11eb-99e1-9f6861320d4e.jpeg" width="160" height="180"> <img src="https://user-images.githubusercontent.com/57191216/100805857-14666580-3438-11eb-9e74-5a00dd8b88f6.jpeg" width="160" height="180">
 
 ## סקר שוק:
 
