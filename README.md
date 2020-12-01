@@ -42,7 +42,7 @@
 - **תהליך הסיום:**  
 על מנת לנצח את המשחק צריך להיות השחקן האחרון שנשאר יבש בעוד שאר השחקנים רטובים ב100 אחוז.
 
-<img src="https://user-images.githubusercontent.com/57191216/100806835-d9fdc800-3439-11eb-8511-39b65505857f.jpeg" width="500" height="300">
+<img src="https://user-images.githubusercontent.com/57191216/100807055-50022f00-343a-11eb-8d3a-f73c44a46e2c.jpeg" width="500" height="300">
 
 #### העצמים:
 
