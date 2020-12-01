@@ -56,7 +56,8 @@
 
 - בעולם יש עוד מספר מכשולים שהם גם מסתורים (קירות, גבעות ועוד).
 
-<img src="https://user-images.githubusercontent.com/57191216/100806275-d453b280-3438-11eb-9f39-8f609724ebc0.jpeg" width="400" height="400">
+<img src="https://user-images.githubusercontent.com/57191216/100807682-6eb4f580-343b-11eb-9bb5-ee81ea3cbbd2.jpeg" width="400" height="200"> 
+<img src="https://user-images.githubusercontent.com/57191216/100807695-72e11300-343b-11eb-818e-3a6e28c7eb03.jpeg" width="400" height="200">
 
 #### המשאבים:
 
