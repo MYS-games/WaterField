@@ -9,6 +9,8 @@ public class WaterFieldNetworkManager : NetworkManager
     public static event Action ClientOnConnected;
     public static event Action ClientOnDisconnected;
 
+    //public List
+
     public override void OnClientConnect(NetworkConnection conn)
     {
         base.OnClientConnect(conn);
