@@ -1,27 +1,64 @@
 fileFormatVersion: 2
-guid: 5201f2833b5c02849af8ae419cd2acb8
+guid: fa45169259c1b8a4a974040fb77a8f6f
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
-  - first:
-      74: 1827226128182048838
-    second: Take 001
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Char_NM031_Sania_D_01
-    second: {fileID: 2100000, guid: 818b059165dd1f04ea1bd0549f3943f7, type: 2}
+      name: Material #1485
+    second: {fileID: 2100000, guid: d419e7d5add998946b29b0190de4e2c8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Char_NM031_Sania_D_02
-    second: {fileID: 2100000, guid: ee8696c96fbb3d749ba2ce7f953bd757, type: 2}
+      name: Material #1486
+    second: {fileID: 2100000, guid: f90c3eb1eff11534fbe2c5fb43f2c756, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Char_NM031_Sania_D_03
-    second: {fileID: 2100000, guid: 7e30130aca0b88648beafe73fadaab33, type: 2}
+      name: Material #1487
+    second: {fileID: 2100000, guid: 6b7291b8862fd224593545f264e3216c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #1488
+    second: {fileID: 2100000, guid: 0d11bb364c5d6f148ba7c7653646771e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #1489
+    second: {fileID: 2100000, guid: f2c94fe964ecfa141a61a1078bb575cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #26
+    second: {fileID: 2100000, guid: b131a8c943c2bd741b0992fc1b2e3e2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #28
+    second: {fileID: 2100000, guid: c106b68d9c7ffef40871e401a4fcec45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mtl_eye_cornea
+    second: {fileID: 2100000, guid: 12eca090856984743a85ed125a693bde, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SSS_003
+    second: {fileID: 2100000, guid: 92a34170e498c634ea6ba821604868d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SSS_004
+    second: {fileID: 2100000, guid: c5f86c898fbc5524484829260ad262b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SSS_005
+    second: {fileID: 2100000, guid: 852fae91687f29a4cb8104efee234aea, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -41,7 +78,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -106,9 +143,9 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
