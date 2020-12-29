@@ -1,27 +1,9 @@
 fileFormatVersion: 2
-guid: 5201f2833b5c02849af8ae419cd2acb8
+guid: 967b14ef4f6dd33439956d6936f3a9a7
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
-  - first:
-      74: 1827226128182048838
-    second: Take 001
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Char_NM031_Sania_D_01
-    second: {fileID: 2100000, guid: 818b059165dd1f04ea1bd0549f3943f7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Char_NM031_Sania_D_02
-    second: {fileID: 2100000, guid: ee8696c96fbb3d749ba2ce7f953bd757, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Char_NM031_Sania_D_03
-    second: {fileID: 2100000, guid: 7e30130aca0b88648beafe73fadaab33, type: 2}
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
