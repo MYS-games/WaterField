@@ -12,11 +12,8 @@ public class LoadCharacter : MonoBehaviour
 	void Start()
 	{
 		int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
-		Debug.Log(selectedCharacter);
 		GameObject prefab = characterPrefabs[selectedCharacter];
-		Debug.Log(characterPrefabs[selectedCharacter].ToString());
 		GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
-
 		//label.text = prefab.name;
 	}
 }
