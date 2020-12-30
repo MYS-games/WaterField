@@ -53,7 +53,7 @@ public class WaterFieldNetworkManager : NetworkManager
         isGameInProgress = true;
         Debug.Log("started");
 
-        ServerChangeScene("SampleScene");
+        ServerChangeScene("selection");
     }
 
 

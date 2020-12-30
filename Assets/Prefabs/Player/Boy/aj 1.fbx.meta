@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9918bca8700d97f419541f97875c664c
+guid: dde4e383288ae4a4a93ddbbcad3850dc
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
@@ -11,7 +11,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Boy01_Body_MAT
-    second: {fileID: 2100000, guid: d955b8f4ac25465419b15e9c7d4d67fa, type: 2}
+    second: {fileID: 2100000, guid: 29ef1b4ba99d85640a609b2940739086, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -31,22 +31,22 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Boy01_FacialAnimMap
-    second: {fileID: 2800000, guid: 87c0d79f3618baf4f87cccebb64e62a6, type: 3}
+    second: {fileID: 2800000, guid: ddb58340c6e436847bac71e531c90331, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Boy01_diffuse
-    second: {fileID: 2800000, guid: 120aa62f1083fc245a3740215e7797e6, type: 3}
+    second: {fileID: 2800000, guid: 89aaebc4abe8b3f48a163e57b985d968, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Boy01_normal
-    second: {fileID: 2800000, guid: 02753baec3b6ee240be6cea17f1fbea2, type: 3}
+    second: {fileID: 2800000, guid: 1605ccf262a9d7a468f7dc82f4037bea, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Boy01_spec
-    second: {fileID: 2800000, guid: 307363cbc1a033d46b9358a6bd01ea0d, type: 3}
+    second: {fileID: 2800000, guid: 2c7f46cdc98c3fb439a6e94807490253, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
