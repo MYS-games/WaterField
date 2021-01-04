@@ -77,14 +77,14 @@ public class WaterFieldNetworkManager : NetworkManager
 
             foreach (WaterFieldPlayer player in Players)
             {
-                GameObject playerInstance = Instantiate(
+                /*GameObject playerInstance = Instantiate(
                     theActualPlayer,
                     GetStartPosition().position,
                     Quaternion.identity);
 
-                NetworkServer.Spawn(playerInstance, player.connectionToClient);
+                NetworkServer.Spawn(playerInstance, player.connectionToClient);*/
 
-                /*Debug.Log($"selected index {player.GetSelectedPlayerIndex()}");
+                
                 if (player.GetSelectedPlayerIndex() == 0)
                 {
                     GameObject playerInstance = Instantiate(
@@ -102,7 +102,7 @@ public class WaterFieldNetworkManager : NetworkManager
                     Quaternion.identity);
 
                     NetworkServer.Spawn(playerInstance, player.connectionToClient);
-                }*/
+                }
             }
         }
         else
