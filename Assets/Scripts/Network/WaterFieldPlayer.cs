@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class WaterFieldPlayer : NetworkBehaviour
 {
+    [SyncVar(hook = nameof(HandleIndexSelction))] 
+    private int selectedPlayerIndex = -1;
+
     [SyncVar(hook = nameof(AuthHandleLobbyOwnerUpdated))]
     private bool isLobbyOwner = false;
 
@@ -16,10 +19,27 @@ public class WaterFieldPlayer : NetworkBehaviour
         return isLobbyOwner;
     }
 
+    public int GetSelectedPlayerIndex()
+    {
+        return selectedPlayerIndex;
+    }
+
+    [Server]
+    public void SetSelectedPlayerIndex(int selectedIndex)
+    {
+        selectedPlayerIndex = selectedIndex;
+    }
+
     [Server]
     public void SetPartyOwner(bool state)
     {
         isLobbyOwner = state;
+    }
+
+    [Command]
+    public void CmdSelectNewIndex(int newIndex)
+    {
+        SetSelectedPlayerIndex(newIndex);
     }
 
     [Command]
@@ -28,6 +48,12 @@ public class WaterFieldPlayer : NetworkBehaviour
         if (!isLobbyOwner) { return; }
 
        ((WaterFieldNetworkManager)NetworkManager.singleton).StartGame();
+    }
+
+    [Command]
+    public void CmdStartWorldScene()
+    {
+        ((WaterFieldNetworkManager)NetworkManager.singleton).MoveToWorldScene();
     }
 
     public override void OnStartClient()
@@ -42,7 +68,20 @@ public class WaterFieldPlayer : NetworkBehaviour
 
         ((WaterFieldNetworkManager)NetworkManager.singleton).Players.Remove(this);
     }
-    private void AuthHandleLobbyOwnerUpdated(bool oldState, bool newState)
+
+    private void HandleIndexSelction(int _, int newSelectedIndex)
+    {
+        if (!hasAuthority) { return; }
+
+        SetSelectedPlayerIndex(newSelectedIndex);
+    }
+
+    public void TrySelectIndex(int selectedIndex)
+    {
+        CmdSelectNewIndex(selectedIndex);
+    }
+
+    private void AuthHandleLobbyOwnerUpdated(bool _, bool newState)
     {
         if (!hasAuthority) { return; }
 

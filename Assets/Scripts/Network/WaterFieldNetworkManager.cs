@@ -3,9 +3,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaterFieldNetworkManager : NetworkManager
 {
+    [SerializeField] private GameObject[] theActualPlayerList = null;
+    [SerializeField] private GameObject theActualPlayer = null;
+
+
     public static event Action ClientOnConnected;
     public static event Action ClientOnDisconnected;
 
@@ -51,22 +56,59 @@ public class WaterFieldNetworkManager : NetworkManager
         if(Players.Count < 1) { return; }
 
         isGameInProgress = true;
-        Debug.Log("started");
 
         ServerChangeScene("selection");
     }
 
-
-
-    public override void OnServerChangeScene(string newSceneName)
+    public void MoveToWorldScene()
     {
-        base.OnServerChangeScene(newSceneName);
-        //TODO own code
-        /*foreach (WaterFieldPlayer player in Players)
+        ServerChangeScene("WorldScene");
+    }
+
+
+
+    public override void OnServerSceneChanged(string newSceneName)
+    {
+       base.OnServerChangeScene(newSceneName);
+        
+        if (newSceneName.Equals("WorldScene"))
         {
-            GameObject playerInstance = Instantiate(//prefab, GetStartPosition().position, Quaternion.identity);
-            NetworkServer.Spawn(playerInstance, player.connectionToClient);
-        }*/
+            Debug.Log("hi LOLOLOLO");
+
+            foreach (WaterFieldPlayer player in Players)
+            {
+                /*GameObject playerInstance = Instantiate(
+                    theActualPlayer,
+                    GetStartPosition().position,
+                    Quaternion.identity);
+
+                NetworkServer.Spawn(playerInstance, player.connectionToClient);*/
+
+                
+                if (player.GetSelectedPlayerIndex() == 0)
+                {
+                    GameObject playerInstance = Instantiate(
+                    theActualPlayerList[0],
+                    GetStartPosition().position,
+                    Quaternion.identity);
+
+                    NetworkServer.Spawn(playerInstance, player.connectionToClient);
+                }
+                else
+                {
+                    GameObject playerInstance = Instantiate(
+                    theActualPlayerList[1],
+                    GetStartPosition().position,
+                    Quaternion.identity);
+
+                    NetworkServer.Spawn(playerInstance, player.connectionToClient);
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("Yuval solu");
+        }
     }
 
     #endregion
