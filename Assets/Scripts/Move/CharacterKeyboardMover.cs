@@ -19,6 +19,7 @@ public class CharacterKeyboardMover: MonoBehaviour {
     Vector3 velocity;
 
     void Update()  {
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         //if (x == 0 && z == 0) return;
@@ -29,7 +30,6 @@ public class CharacterKeyboardMover: MonoBehaviour {
         }
         // Click Up: velocity = (0,0,1)
         velocity = transform.TransformDirection(velocity);
-        //Debug.Log("velocity="+velocity+" isGrounded="+ _cc.isGrounded);
         _cc.Move(velocity * Time.deltaTime);
     }
 }
