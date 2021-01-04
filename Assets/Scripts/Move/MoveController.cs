@@ -43,7 +43,7 @@ public class MoveController : NetworkBehaviour
         float horInput = Input.GetAxis("Horizontal");
         float verInput = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(horInput, 0f, verInput);
-        CmdMove(movement);
+        //CmdMove(movement);
        /* //Walking
         if (Input.GetKey(KeyCode.UpArrow))
         {
