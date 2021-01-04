@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Mirror;
 
-public class LoadCharacter : MonoBehaviour
+public class LoadCharacter : NetworkBehaviour
 {
 	public GameObject[] characterPrefabs;
 	public Transform spawnPoint;
@@ -11,9 +12,15 @@ public class LoadCharacter : MonoBehaviour
 
 	void Start()
 	{
-		int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
-		GameObject prefab = characterPrefabs[selectedCharacter];
-		GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
+		//int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
+
+		WaterFieldPlayer myPlayer = FindObjectOfType<WaterFieldPlayer>();
+		Debug.Log("after myPlayer");
+
+		int selectedCharacter = myPlayer.GetSelectedPlayerIndex();
+		Debug.Log("after selection	");
+		//GameObject prefab = characterPrefabs[selectedCharacter];
+		//GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
 		//label.text = prefab.name;
 	}
 }

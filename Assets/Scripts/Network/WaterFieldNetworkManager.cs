@@ -3,9 +3,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaterFieldNetworkManager : NetworkManager
 {
+    [SerializeField] private GameObject[] theActualPlayerList = null;
+
     public static event Action ClientOnConnected;
     public static event Action ClientOnDisconnected;
 
@@ -51,22 +54,46 @@ public class WaterFieldNetworkManager : NetworkManager
         if(Players.Count < 1) { return; }
 
         isGameInProgress = true;
-        Debug.Log("started");
 
         ServerChangeScene("selection");
+    }
+
+    public void MoveToWorldScene()
+    {
+        ServerChangeScene("WorldScene");
     }
 
 
 
     public override void OnServerChangeScene(string newSceneName)
     {
-        base.OnServerChangeScene(newSceneName);
-        //TODO own code
-        /*foreach (WaterFieldPlayer player in Players)
+       base.OnServerChangeScene(newSceneName);
+
+       if(SceneManager.GetActiveScene().name.StartsWith("WorldScene"))
         {
-            GameObject playerInstance = Instantiate(//prefab, GetStartPosition().position, Quaternion.identity);
-            NetworkServer.Spawn(playerInstance, player.connectionToClient);
-        }*/
+            foreach(WaterFieldPlayer player in Players)
+            {
+                Debug.Log($"selected index {player.GetSelectedPlayerIndex()}");
+                if (player.GetSelectedPlayerIndex() == 0)
+                {
+                    GameObject playerInstance = Instantiate(
+                    theActualPlayerList[0],
+                    GetStartPosition().position,
+                    Quaternion.identity);
+                    
+                    NetworkServer.Spawn(playerInstance, player.connectionToClient);
+                }
+                else
+                {
+                     GameObject playerInstance = Instantiate(
+                     theActualPlayerList[1],
+                     GetStartPosition().position,
+                     Quaternion.identity);
+
+                     NetworkServer.Spawn(playerInstance, player.connectionToClient);
+                }
+            }
+        }
     }
 
     #endregion

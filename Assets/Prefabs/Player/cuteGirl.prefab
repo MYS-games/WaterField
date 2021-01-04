@@ -975,6 +975,7 @@ GameObject:
   - component: {fileID: 1256373289548464186}
   - component: {fileID: 692964660864785847}
   - component: {fileID: 7600656400298978108}
+  - component: {fileID: 4287506083798120154}
   m_Layer: 0
   m_Name: cuteGirl
   m_TagString: Untagged
@@ -1081,6 +1082,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1529450c589a8349af2813c6100bf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  agent: {fileID: 0}
 --- !u!114 &1256373289548464186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1151,6 +1155,22 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &4287506083798120154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7708305419172975094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  m_AssetId: 
+  hasSpawned: 0
 --- !u!1 &8196369607177402630
 GameObject:
   m_ObjectHideFlags: 0
