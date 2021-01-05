@@ -30,7 +30,7 @@ public class WaterFieldNetworkManager : NetworkManager
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
         base.OnServerAddPlayer(conn);
-
+      
         WaterFieldPlayer player = conn.identity.GetComponent<WaterFieldPlayer>();
         Players.Add(player);
 
@@ -73,8 +73,7 @@ public class WaterFieldNetworkManager : NetworkManager
         
         if (newSceneName.Equals("WorldScene"))
         {
-            Debug.Log("hi LOLOLOLO");
-
+            Debug.Log(Players.Count);
             foreach (WaterFieldPlayer player in Players)
             {
                 /*GameObject playerInstance = Instantiate(
@@ -94,7 +93,7 @@ public class WaterFieldNetworkManager : NetworkManager
 
                     NetworkServer.Spawn(playerInstance, player.connectionToClient);
                 }
-                else
+                else if(player.GetSelectedPlayerIndex() == 1)
                 {
                     GameObject playerInstance = Instantiate(
                     theActualPlayerList[1],

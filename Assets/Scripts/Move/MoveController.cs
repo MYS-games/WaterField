@@ -39,7 +39,6 @@ public class MoveController : NetworkBehaviour
     [ClientCallback]
     void Update()
     {
-        Debug.Log("on update");
         float horInput = Input.GetAxis("Horizontal");
         float verInput = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(horInput, 0f, verInput);
