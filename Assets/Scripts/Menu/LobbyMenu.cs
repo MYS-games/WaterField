@@ -35,7 +35,7 @@ public class LobbyMenu : MonoBehaviour
 
     public void StartGame()
     {
-        NetworkClient.connection.identity.GetComponent<WaterFieldPlayer>().CmdStartGame();  
+        NetworkClient.connection.identity.GetComponent<WaterFieldPlayer>().CmdStartGame();
     }
 
     public void LeaveLobby()

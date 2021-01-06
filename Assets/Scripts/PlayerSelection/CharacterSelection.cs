@@ -32,7 +32,7 @@ public class CharacterSelection : NetworkBehaviour
 
 		myPlayer.TrySelectIndex(selectedCharacter);
 
-		myPlayer.CmdStartWorldScene();
+		//myPlayer.CmdStartWorldScene();
 		//SceneManager.LoadScene(2, LoadSceneMode.Single);
 	}
 }

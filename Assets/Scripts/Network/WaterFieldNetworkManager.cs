@@ -7,9 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class WaterFieldNetworkManager : NetworkManager
 {
-    [SerializeField] private GameObject[] theActualPlayerList = null;
     [SerializeField] private GameObject theActualPlayer = null;
-
 
     public static event Action ClientOnConnected;
     public static event Action ClientOnDisconnected;
@@ -32,6 +30,7 @@ public class WaterFieldNetworkManager : NetworkManager
         base.OnServerAddPlayer(conn);
       
         WaterFieldPlayer player = conn.identity.GetComponent<WaterFieldPlayer>();
+
         Players.Add(player);
 
         player.SetPartyOwner(Players.Count == 1);
@@ -57,62 +56,43 @@ public class WaterFieldNetworkManager : NetworkManager
 
         isGameInProgress = true;
 
-        ServerChangeScene("selection");
+        ServerChangeScene("TestNetwork");
     }
-
-    public void MoveToWorldScene()
-    {
-        ServerChangeScene("WorldScene");
-    }
-
 
 
     public override void OnServerSceneChanged(string newSceneName)
     {
-       base.OnServerChangeScene(newSceneName);
-        
-        if (newSceneName.Equals("WorldScene"))
-        {
+        base.OnServerChangeScene(newSceneName);
+
+        if (SceneManager.GetActiveScene().name.StartsWith("TestNetwork"))
             Debug.Log(Players.Count);
-            foreach (WaterFieldPlayer player in Players)
-            {
-                /*GameObject playerInstance = Instantiate(
-                    theActualPlayer,
-                    GetStartPosition().position,
-                    Quaternion.identity);
-
-                NetworkServer.Spawn(playerInstance, player.connectionToClient);*/
-
-                
-                if (player.GetSelectedPlayerIndex() == 0)
-                {
-                    GameObject playerInstance = Instantiate(
-                    theActualPlayerList[0],
-                    GetStartPosition().position,
-                    Quaternion.identity);
-
-                    NetworkServer.Spawn(playerInstance, player.connectionToClient);
-                }
-                else if(player.GetSelectedPlayerIndex() == 1)
-                {
-                    GameObject playerInstance = Instantiate(
-                    theActualPlayerList[1],
-                    GetStartPosition().position,
-                    Quaternion.identity);
-
-                    NetworkServer.Spawn(playerInstance, player.connectionToClient);
-                }
-            }
-        }
-        else
+        foreach (WaterFieldPlayer player in Players)
         {
-            Debug.Log("Yuval solu");
+            GameObject playerInstance = Instantiate(
+                theActualPlayer,
+                GetStartPosition().position,
+                Quaternion.identity);
+
+            NetworkServer.Spawn(playerInstance, player.connectionToClient);
+
+            /*if (player.isLocalPlayer) 
+            {
+                Transform cameraTransform = Camera.main.gameObject.transform;  //Find main camera which is part of the scene instead of the prefab
+                cameraTransform.parent = playerInstance.transform;  //Make the camera a child of the mount point
+                cameraTransform.position = playerInstance.transform.position;  //Set position/rotation same as the mount point
+                cameraTransform.rotation = playerInstance.transform.rotation;
+
+            }
+
+            Debug.Log("hii");*/
+            
         }
     }
 
     #endregion
 
     #region Client
+
     public override void OnClientConnect(NetworkConnection conn)
     {
         base.OnClientConnect(conn);

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class WaterFieldPlayer : NetworkBehaviour
 {
+
     [SyncVar(hook = nameof(HandleIndexSelction))] 
     private int selectedPlayerIndex = -1;
 
@@ -50,12 +51,6 @@ public class WaterFieldPlayer : NetworkBehaviour
        ((WaterFieldNetworkManager)NetworkManager.singleton).StartGame();
     }
 
-    [Command]
-    public void CmdStartWorldScene()
-    {
-        ((WaterFieldNetworkManager)NetworkManager.singleton).MoveToWorldScene();
-    }
-
     public override void OnStartClient()
     {
         if (NetworkServer.active) { return; }
@@ -80,6 +75,14 @@ public class WaterFieldPlayer : NetworkBehaviour
     {
         CmdSelectNewIndex(selectedIndex);
     }
+
+    /*public void SetMyCamera()
+    {
+        Transform cameraTransform = Camera.main.gameObject.transform;  //Find main camera which is part of the scene instead of the prefab
+        cameraTransform.parent = this.transform;  //Make the camera a child of the mount point
+        cameraTransform.position = this.transform.position;  //Set position/rotation same as the mount point
+        cameraTransform.rotation = this.transform.rotation;
+    }*/
 
     private void AuthHandleLobbyOwnerUpdated(bool _, bool newState)
     {
