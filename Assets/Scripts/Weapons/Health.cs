@@ -9,7 +9,7 @@ public class Health : NetworkBehaviour
 {
     [SerializeField] private int maxHealth = 100;
     
-    private GameObject healthBar = null;
+    //private GameObject healthBar = null;
 
     [SyncVar(hook = nameof(HandleHealthUpdated))]
     private int currentHealth;
@@ -17,10 +17,10 @@ public class Health : NetworkBehaviour
     public event Action ServerOnDie;
     public event Action<int, int> ClientOnHealthUpdated;
 
-    private void Start()
+   /* private void Start()
     {
         healthBar = GameObject.FindGameObjectWithTag("WetBar");
-    }
+    }*/
 
     #region Server
 
@@ -33,14 +33,26 @@ public class Health : NetworkBehaviour
         //UnitBase.ServerOnPlayerDie += ServerHandlePlayerDie;
     }
 
+    public int GetHealth()
+    {
+        return currentHealth;
+    }
+
     [Server]
-    public void DealDamage(int damageAmount)
+    private void SetHealth(int newHealth)
+    {
+        currentHealth = newHealth;
+        Debug.Log(currentHealth);
+    }
+
+    [Server]
+    public void ServerDealDamage(int damageAmount)
     {
         if (currentHealth == 0) { return; }
 
-        currentHealth = Mathf.Max(currentHealth - damageAmount, 0);
+        SetHealth(Mathf.Max(currentHealth - damageAmount, 0));
 
-        if(healthBar != null)
+        /*if(healthBar != null)
         {
             HealthBar updatedBar = healthBar.GetComponent<HealthBar>();
             updatedBar.SetHealth(currentHealth);
@@ -49,7 +61,7 @@ public class Health : NetworkBehaviour
         {
             Debug.Log("healthBar is null");
         }
-        
+        */
         if (currentHealth != 0) { return; }
 
         ServerOnDie?.Invoke();

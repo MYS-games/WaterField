@@ -7,52 +7,41 @@ using System;
 
 public class Shoot : NetworkBehaviour
 {
-    [SerializeField] private float range = 10f;
+    [SerializeField] private float range = 50f;
     [SerializeField] private int damage = 20;
+    [SerializeField] private Camera cam = null;
+    //[SerializeField] private ParticleSystem waterEffect = null;
 
-    public Camera cam;
-    public GameObject waterPrefab;
-    public Transform waterSpawn;
+    private void Start()
+    {
+        cam = Camera.main;
+    }
 
+    [Server]
+    private void DealDamage(WaterFieldPlayer hitPlayer, int damage)
+    {
+        hitPlayer.GetComponent<Health>().ServerDealDamage(damage);
+    }
 
+    [ClientCallback]
     void Update()
     {
-        /* if (!isLocalPlayer)
-         {
-             Debug.Log("in return"); return;
-         }*/
+        if (!hasAuthority) { return; }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            CmdFire();
-
-            if (!Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, range)) { return;}
-            
-            if (hit.collider.TryGetComponent<Health>(out Health targetHealth))
+            Debug.Log("Z was pressed");
+            if (!Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, range)) { return; }
+            Debug.Log("raycast was found");
+            if (hit.collider.TryGetComponent<WaterFieldPlayer>(out WaterFieldPlayer targetPlayer))
             {
-                targetHealth.DealDamage(damage);
+                DealDamage(targetPlayer, damage);
+
+                //targetPlayer.GetComponent<Health>().ServerDealDamage(damage);
+                int temp = targetPlayer.GetComponent<Health>().GetHealth();
+                Debug.Log(temp);
             }
         }
 
     }
-    [Command]
-    private void CmdFire()
-    {
-        ServerShoot();
-    }
-
-    [Server]
-    public void ServerShoot()
-    {
-        GameObject water = (GameObject)Instantiate(
-            waterPrefab,
-            waterSpawn.position,
-            waterSpawn.rotation);
-
-        NetworkServer.Spawn(water);
-
-        Destroy(water, 2);
-    }
-
-
 }

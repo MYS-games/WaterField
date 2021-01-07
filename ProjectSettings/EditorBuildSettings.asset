@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestNetwork.unity
     guid: e862abb3a7bbad4418129d166bd5a036
+  - enabled: 1
+    path: Assets/Scenes/NewWorldScene.unity
+    guid: e7de003a6ba1bb24da57519d0a4086b6
   m_configObjects: {}

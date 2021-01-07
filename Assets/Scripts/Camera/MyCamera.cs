@@ -20,7 +20,7 @@ public class MyCamera : NetworkBehaviour
        
         Transform cameraTransform = Camera.main.gameObject.transform;  //Find main camera which is part of the scene instead of the prefab
         cameraTransform.parent = transform;  //Make the camera a child of the mount point
-        cameraTransform.position = transform.position;  //Set position/rotation same as the mount point
+        cameraTransform.position = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);  //Set position/rotation same as the mount point
         cameraTransform.rotation = transform.rotation;
         
     }

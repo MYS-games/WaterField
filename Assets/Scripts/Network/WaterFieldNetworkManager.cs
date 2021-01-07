@@ -56,7 +56,7 @@ public class WaterFieldNetworkManager : NetworkManager
 
         isGameInProgress = true;
 
-        ServerChangeScene("TestNetwork");
+        ServerChangeScene("NewWorldScene");
     }
 
 
@@ -64,7 +64,7 @@ public class WaterFieldNetworkManager : NetworkManager
     {
         base.OnServerChangeScene(newSceneName);
 
-        if (SceneManager.GetActiveScene().name.StartsWith("TestNetwork"))
+        if (SceneManager.GetActiveScene().name.StartsWith("NewWorldScene"))
             Debug.Log(Players.Count);
         foreach (WaterFieldPlayer player in Players)
         {

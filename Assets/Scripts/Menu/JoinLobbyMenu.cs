@@ -29,7 +29,7 @@ public class JoinLobbyMenu : MonoBehaviour
         NetworkManager.singleton.networkAddress = address;
         NetworkManager.singleton.StartClient();
 
-        joinButton.interactable = false;
+       // joinButton.interactable = false;
     }
 
     private void HandleClientConnected() 
