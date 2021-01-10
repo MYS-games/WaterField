@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 4323fde32dbcebf4195ad58c05f28e84, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -110,7 +110,7 @@ NavMeshSettings:
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
-    ledgeDropHeight: 0
+    ledgeDropHeight: 1
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
@@ -376,12 +376,12 @@ PrefabInstance:
     - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
       propertyPath: theActualPlayer
       value: 
-      objectReference: {fileID: 3354831284253204981, guid: 367b7c02bad7a55448312eb079b7f0b6,
+      objectReference: {fileID: 6417654637126726861, guid: 09eb19ae5a6a74d469c0c0d9964e80dc,
         type: 3}
     - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
       propertyPath: spawnPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 3354831284253204981, guid: 367b7c02bad7a55448312eb079b7f0b6,
+      objectReference: {fileID: 6417654637126726861, guid: 09eb19ae5a6a74d469c0c0d9964e80dc,
         type: 3}
     - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
       propertyPath: gameOverPrefab
@@ -521,5 +521,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8077516679532004882, guid: 4fbf9be3a252cb24db9fb27ee6e65dab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077516680272734669, guid: 4fbf9be3a252cb24db9fb27ee6e65dab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077516680426396101, guid: 4fbf9be3a252cb24db9fb27ee6e65dab,
+        type: 3}
+      propertyPath: m_textInfo.textComponent
+      value: 
+      objectReference: {fileID: 8077516680838416265}
+    - target: {fileID: 8077516680426396101, guid: 4fbf9be3a252cb24db9fb27ee6e65dab,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077516680426396101, guid: 4fbf9be3a252cb24db9fb27ee6e65dab,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077516680426396101, guid: 4fbf9be3a252cb24db9fb27ee6e65dab,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077516680426396101, guid: 4fbf9be3a252cb24db9fb27ee6e65dab,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077516680426396101, guid: 4fbf9be3a252cb24db9fb27ee6e65dab,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fbf9be3a252cb24db9fb27ee6e65dab, type: 3}
+--- !u!114 &8077516680838416265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8077516680426396101, guid: 4fbf9be3a252cb24db9fb27ee6e65dab,
+    type: 3}
+  m_PrefabInstance: {fileID: 8077516680838416264}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

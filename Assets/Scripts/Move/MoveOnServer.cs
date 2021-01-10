@@ -26,7 +26,12 @@ public class MoveOnServer : NetworkBehaviour
 
         // Move translation along the object's z-axis
         transform.Translate(0, 0, translation);
+        RpcMovue();
+    }
 
-       
+    [ClientRpc]
+    public void RpcMovue()
+    {
+        Debug.Log("someone moved");
     }
 }
