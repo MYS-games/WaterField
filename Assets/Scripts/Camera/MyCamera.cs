@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MyCamera : NetworkBehaviour
 {
+    [SerializeField] private GameObject cameraPlace = null;
     //public GameObject CameraMountPoint;
     private Camera myCamera;
 
@@ -19,9 +20,9 @@ public class MyCamera : NetworkBehaviour
 
        
         Transform cameraTransform = Camera.main.gameObject.transform;  //Find main camera which is part of the scene instead of the prefab
-        cameraTransform.parent = transform;  //Make the camera a child of the mount point
-        cameraTransform.position = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);  //Set position/rotation same as the mount point
-        cameraTransform.rotation = transform.rotation;
+        cameraTransform.parent = cameraPlace.transform;  //Make the camera a child of the mount point
+        cameraTransform.position = new Vector3(cameraPlace.transform.position.x, cameraPlace.transform.position.y, cameraPlace.transform.position.z);  //Set position/rotation same as the mount point
+        cameraTransform.rotation = cameraPlace.transform.rotation;
         
     }
 }

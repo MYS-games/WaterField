@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class WaterFieldNetworkManager : NetworkManager
 {
     [SerializeField] private GameObject theActualPlayer = null;
+    [SerializeField] private GameOverHandler gameOverPrefab = null;
 
     public static event Action ClientOnConnected;
     public static event Action ClientOnDisconnected;
@@ -65,27 +66,19 @@ public class WaterFieldNetworkManager : NetworkManager
         base.OnServerChangeScene(newSceneName);
 
         if (SceneManager.GetActiveScene().name.StartsWith("NewWorldScene"))
-            Debug.Log(Players.Count);
-        foreach (WaterFieldPlayer player in Players)
         {
-            GameObject playerInstance = Instantiate(
-                theActualPlayer,
-                GetStartPosition().position,
-                Quaternion.identity);
+            GameOverHandler gameOverInstance = Instantiate(gameOverPrefab);
+            NetworkServer.Spawn(gameOverInstance.gameObject);
 
-            NetworkServer.Spawn(playerInstance, player.connectionToClient);
-
-            /*if (player.isLocalPlayer) 
+            foreach (WaterFieldPlayer player in Players)
             {
-                Transform cameraTransform = Camera.main.gameObject.transform;  //Find main camera which is part of the scene instead of the prefab
-                cameraTransform.parent = playerInstance.transform;  //Make the camera a child of the mount point
-                cameraTransform.position = playerInstance.transform.position;  //Set position/rotation same as the mount point
-                cameraTransform.rotation = playerInstance.transform.rotation;
+                GameObject playerInstance = Instantiate(
+                    theActualPlayer,
+                    GetStartPosition().position,
+                    Quaternion.identity);
 
+                NetworkServer.Spawn(playerInstance, player.connectionToClient);
             }
-
-            Debug.Log("hii");*/
-            
         }
     }
 

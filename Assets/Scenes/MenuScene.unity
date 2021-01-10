@@ -369,6 +369,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
+      propertyPath: spawnPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
+      propertyPath: theActualPlayer
+      value: 
+      objectReference: {fileID: 3354831284253204981, guid: 367b7c02bad7a55448312eb079b7f0b6,
+        type: 3}
+    - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
+      propertyPath: spawnPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 3354831284253204981, guid: 367b7c02bad7a55448312eb079b7f0b6,
+        type: 3}
+    - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
+      propertyPath: gameOverPrefab
+      value: 
+      objectReference: {fileID: 1867531980218327895, guid: 08a7c1574c3d0d34fa38b53cb94c1e1f,
+        type: 3}
+    - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
+      propertyPath: spawnPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2808669069719560664, guid: 80c5bab5eb2f3394bb5f656bbf664dc0,
         type: 3}
       propertyPath: m_Name

@@ -17,8 +17,8 @@ public class Shoot : NetworkBehaviour
         cam = Camera.main;
     }
 
-    [Server]
-    private void DealDamage(WaterFieldPlayer hitPlayer, int damage)
+    [Command]
+    private void CmdDealDamage(Player hitPlayer, int damage)
     {
         hitPlayer.GetComponent<Health>().ServerDealDamage(damage);
     }
@@ -33,13 +33,9 @@ public class Shoot : NetworkBehaviour
             Debug.Log("Z was pressed");
             if (!Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, range)) { return; }
             Debug.Log("raycast was found");
-            if (hit.collider.TryGetComponent<WaterFieldPlayer>(out WaterFieldPlayer targetPlayer))
+            if (hit.collider.TryGetComponent<Player>(out Player targetPlayer))
             {
-                DealDamage(targetPlayer, damage);
-
-                //targetPlayer.GetComponent<Health>().ServerDealDamage(damage);
-                int temp = targetPlayer.GetComponent<Health>().GetHealth();
-                Debug.Log(temp);
+                CmdDealDamage(targetPlayer, damage);
             }
         }
 
