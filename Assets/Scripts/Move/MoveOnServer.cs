@@ -32,6 +32,6 @@ public class MoveOnServer : NetworkBehaviour
     [ClientRpc]
     public void RpcMovue()
     {
-        Debug.Log("someone moved");
+       // Debug.Log("someone moved");
     }
 }

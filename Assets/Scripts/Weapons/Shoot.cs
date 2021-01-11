@@ -10,10 +10,13 @@ public class Shoot : NetworkBehaviour
     [SerializeField] private float range = 50f;
     [SerializeField] private int damage = 20;
     [SerializeField] private Camera cam = null;
+    [SerializeField] private Player myWaterTank = null;
+    private ParticleSystem waterEffect;
     //[SerializeField] private ParticleSystem waterEffect = null;
 
     private void Start()
     {
+        waterEffect = this.GetComponentInChildren<ParticleSystem>();
         cam = Camera.main;
     }
 
@@ -28,11 +31,15 @@ public class Shoot : NetworkBehaviour
     {
         if (!hasAuthority) { return; }
 
+        if (myWaterTank.GetShotsLeft() == 0) { return; }
+
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Debug.Log("Z was pressed");
+            waterEffect.Play();
+            myWaterTank.HasShot();
+           // Debug.Log("Z was pressed");
             if (!Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, range)) { return; }
-            Debug.Log("raycast was found");
+           // Debug.Log("raycast was found");
             if (hit.collider.TryGetComponent<Player>(out Player targetPlayer))
             {
                 CmdDealDamage(targetPlayer, damage);

@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 7306822124818787491}
   - component: {fileID: 4792950730289387625}
   - component: {fileID: 8837957090295591653}
-  - component: {fileID: 6450007044504598971}
+  - component: {fileID: 4715172825191731752}
   m_Layer: 0
   m_Name: Fire Hydrant4.Fbx
   m_TagString: Untagged
@@ -479,7 +479,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -856059019632272089, guid: 84527011980ced34895c150805819561, type: 3}
---- !u!114 &6450007044504598971
+--- !u!114 &4715172825191731752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -488,10 +488,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6450007044504598972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33fb8c393f13fa24b89c9e468806969f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b916f669de29564cadcdd8f28c02796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterLeak: {fileID: 6305640986562500326}
+  maxQuantity: 15
+  timeBetweenFill: 0.5
 --- !u!1001 &6143594794116183934
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -643,12 +644,6 @@ PrefabInstance:
 --- !u!4 &6148145512202043074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4775379269913020, guid: a82a87e68ab906d4bbf876f687e2a155,
-    type: 3}
-  m_PrefabInstance: {fileID: 6143594794116183934}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6305640986562500326 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198244127493087640, guid: a82a87e68ab906d4bbf876f687e2a155,
     type: 3}
   m_PrefabInstance: {fileID: 6143594794116183934}
   m_PrefabAsset: {fileID: 0}

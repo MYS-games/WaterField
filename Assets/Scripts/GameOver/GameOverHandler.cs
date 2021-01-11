@@ -10,7 +10,7 @@ public class GameOverHandler : NetworkBehaviour
 
     private List<Player> players = new List<Player>();
 
-    #region Srever
+    #region Server
 
     public override void OnStartServer()
     {
@@ -40,7 +40,7 @@ public class GameOverHandler : NetworkBehaviour
         Debug.Log("Game Over");
 
         int winnerId = players[0].connectionToClient.connectionId;
-        RpcGameOver($"palyer {winnerId}");
+        RpcGameOver($"player {winnerId}");
     }
 
     #endregion

@@ -42,7 +42,7 @@ public class Health : NetworkBehaviour
     private void SetHealth(int newHealth)
     {
         currentHealth = newHealth;
-        Debug.Log(currentHealth);
+       // Debug.Log(currentHealth);
     }
 
     [Server]

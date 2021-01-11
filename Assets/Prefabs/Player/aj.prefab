@@ -925,9 +925,10 @@ GameObject:
   - component: {fileID: 5240650956621960006}
   - component: {fileID: -2460925921636905166}
   - component: {fileID: 1288653441382140422}
+  - component: {fileID: -1274838841855382479}
   m_Layer: 0
   m_Name: aj
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1168,6 +1169,7 @@ MonoBehaviour:
   range: 50
   damage: 20
   cam: {fileID: 0}
+  myWaterTank: {fileID: 0}
 --- !u!23 &-2460925921636905166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1221,6 +1223,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-1274838841855382479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354831284253204981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b916f669de29564cadcdd8f28c02796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxQuantity: 15
+  timeBetweenFill: 3
 --- !u!1 &3383983102646834171
 GameObject:
   m_ObjectHideFlags: 0

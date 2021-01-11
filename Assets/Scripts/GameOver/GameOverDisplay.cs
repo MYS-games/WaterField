@@ -33,7 +33,7 @@ public class GameOverDisplay : MonoBehaviour
 
     private void ClientHandleGameOver(string winner)
     {
-        winnerText.text = $"{winner} Has Wom!";
+        winnerText.text = $"{winner} Has Won!";
 
         gameOverDisplay.SetActive(true);
     }

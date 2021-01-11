@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 132150294414138240}
   - component: {fileID: 8146948872755996143}
-  - component: {fileID: 8981623919070822550}
   - component: {fileID: 2826520507407736945}
-  - component: {fileID: -5083759401840152917}
   - component: {fileID: 3786535186806421418}
   - component: {fileID: -1919982533771585068}
   - component: {fileID: -6789977241497819520}
+  - component: {fileID: 1241843765764768985}
   m_Layer: 0
   m_Name: Balloon1
   m_TagString: Untagged
@@ -51,22 +50,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 170
   m_Center: {x: -175, y: 174, z: 0}
---- !u!114 &8981623919070822550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765239556566204730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 950dc6efa47a94e47a7534b9886d8f75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionEffect: {fileID: 1722726733478836, guid: c1c88308ebb5d2541a282905b854ee4c,
-    type: 3}
-  explosionForce: 1
-  radius: 1
 --- !u!54 &2826520507407736945
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -83,19 +66,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &-5083759401840152917
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765239556566204730}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 170
-  m_Center: {x: -175, y: 174, z: 0}
 --- !u!23 &3786535186806421418
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -169,6 +139,24 @@ MonoBehaviour:
   localPositionSensitivity: 0.01
   localRotationSensitivity: 0.01
   localScaleSensitivity: 0.01
+--- !u!114 &1241843765764768985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765239556566204730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17a0057f28dc1d4c89eb624903824da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  explosionEffect: {fileID: 1722726733478836, guid: c1c88308ebb5d2541a282905b854ee4c,
+    type: 3}
+  explosionForce: 10
+  radius: 0
 --- !u!1 &8580314633130719715
 GameObject:
   m_ObjectHideFlags: 0
