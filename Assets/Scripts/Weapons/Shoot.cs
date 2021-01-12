@@ -11,12 +11,13 @@ public class Shoot : NetworkBehaviour
     [SerializeField] private int damage = 20;
     [SerializeField] private Camera cam = null;
     [SerializeField] private Player myWaterTank = null;
-    private ParticleSystem waterEffect;
+   // [SerializeField] private GameObject CameraPos = null;
+   // private ParticleSystem waterEffect;
     //[SerializeField] private ParticleSystem waterEffect = null;
 
     public override void OnStartServer()
     {
-        waterEffect = this.GetComponentInChildren<ParticleSystem>();
+       // waterEffect = this.GetComponentInChildren<ParticleSystem>();
         cam = Camera.main;
     }
 
@@ -24,18 +25,24 @@ public class Shoot : NetworkBehaviour
     private void CmdDealDamage(Player hitPlayer, int damage)
     {
         hitPlayer.GetComponent<Health>().ServerDealDamage(damage);
+
     }
 
     [ClientCallback]
     void Update()
     {
+        if (cam == null)
+        {
+            cam = Camera.main;
+            Debug.Log("on UPDATE CAM IS NULL!!");
+        }
         if (!hasAuthority) { return; }
 
         if (myWaterTank.GetShotsLeft() == 0) { return; }
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            waterEffect.Play();
+            //waterEffect.Play();
             myWaterTank.HasShot();
            // Debug.Log("Z was pressed");
             if (!Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, range)) { return; }

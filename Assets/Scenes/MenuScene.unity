@@ -270,39 +270,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &904946603 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2808669069719560664, guid: 80c5bab5eb2f3394bb5f656bbf664dc0,
+--- !u!114 &904946606 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 43196940, guid: 80c5bab5eb2f3394bb5f656bbf664dc0,
     type: 3}
   m_PrefabInstance: {fileID: 2808669069762479059}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &904946604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904946603}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea368fb6f27ec2f40a40e20977992b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Channels: 02000000
-  Timeout: 25
-  SteamAppID: 480
-  AllowSteamRelay: 1
-  SteamUserID: 0
---- !u!114 &904946605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904946603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef4bffeda13d7a748973ff9204401c07, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1152835456 stripped
@@ -412,7 +389,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 43196940, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
       propertyPath: spawnPrefabs.Array.size
@@ -446,7 +423,7 @@ PrefabInstance:
     - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
       propertyPath: transport
       value: 
-      objectReference: {fileID: 904946604}
+      objectReference: {fileID: 904946606}
     - target: {fileID: 2808669069719560664, guid: 80c5bab5eb2f3394bb5f656bbf664dc0,
         type: 3}
       propertyPath: m_Name
