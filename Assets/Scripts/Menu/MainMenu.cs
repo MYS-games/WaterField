@@ -1,4 +1,25 @@
-﻿using System.Collections;
+﻿using Mirror;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MainMenu : MonoBehaviour
+{
+    [SerializeField] private GameObject firstPage = null;
+
+    public void HostLobby()
+    {
+        firstPage.SetActive(false);
+
+        NetworkManager.singleton.StartHost();
+    }
+}
+
+
+
+
+/*
+using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using Steamworks;
@@ -48,7 +69,7 @@ public class MainMenu : MonoBehaviour
 
         SteamMatchmaking.SetLobbyData(
             new CSteamID(callback.m_ulSteamIDLobby),
-            "HostAddress",
+            "76561199128759029",
             SteamUser.GetSteamID().ToString());
     }
 
@@ -63,7 +84,7 @@ public class MainMenu : MonoBehaviour
 
         string hostAddress = SteamMatchmaking.GetLobbyData(
             new CSteamID(callback.m_ulSteamIDLobby),
-            "HostAddress");
+            "76561199128759029");
 
         NetworkManager.singleton.networkAddress = hostAddress;
         NetworkManager.singleton.StartClient();
@@ -71,32 +92,15 @@ public class MainMenu : MonoBehaviour
         landingPagePanel.SetActive(false);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*using Mirror;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class MainMenu : MonoBehaviour
-{
-    [SerializeField] private GameObject firstPage = null;
-
-    public void HostLobby()
-    {
-        firstPage.SetActive(false);
-
-        NetworkManager.singleton.StartHost();
-    }
-}
 */
+
+
+
+
+
+
+
+
+
+
+

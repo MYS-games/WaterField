@@ -14,7 +14,7 @@ public class Shoot : NetworkBehaviour
     private ParticleSystem waterEffect;
     //[SerializeField] private ParticleSystem waterEffect = null;
 
-    private void Start()
+    public override void OnStartServer()
     {
         waterEffect = this.GetComponentInChildren<ParticleSystem>();
         cam = Camera.main;
