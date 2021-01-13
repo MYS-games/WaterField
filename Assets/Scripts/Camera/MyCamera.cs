@@ -13,6 +13,10 @@ public class MyCamera : NetworkBehaviour
     public override void OnStartAuthority()
     {
         myCamera = Camera.main;
+        if (isLocalPlayer)
+        {
+            GetComponent<Canvas>().enabled = true;
+        }
     }
     void Update()
     {

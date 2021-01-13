@@ -1,4 +1,53 @@
-﻿using Mirror;
+﻿using UnityEngine;
+
+public class MoveController : MonoBehaviour
+{
+    public Animator anim = null;
+
+    void Start()
+    {
+        ///anim = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        //Walking
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            anim.Play("Walk");
+            // anim.SetBool("Walk", true);
+
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            anim.GetComponent<Animation>().Stop();
+        }
+
+        //turnRight
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            anim.Play("Right");
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            anim.GetComponent<Animation>().Stop();
+        }
+        //turnLeft
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            anim.Play("Left");
+        }
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            anim.GetComponent<Animation>().Stop();
+        }
+
+
+    }
+}
+
+
+/*using Mirror;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -29,10 +78,10 @@ public class MoveController : NetworkBehaviour
     }
 
 
-   /* void Start()
+   *//* void Start()
     {
         anim = GetComponent<Animator>();
-    }*/
+    }*//*
 
 
 
@@ -43,7 +92,7 @@ public class MoveController : NetworkBehaviour
         float verInput = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(horInput, 0f, verInput);
         //CmdMove(movement);
-       /* //Walking
+       *//* //Walking
         if (Input.GetKey(KeyCode.UpArrow))
         {
             anim.Play("Walk");
@@ -75,46 +124,46 @@ public class MoveController : NetworkBehaviour
             anim.GetComponent<Animation>().Stop();
         }
 */
-        /* //Running
-         if (Input.GetKey(KeyCode.R))
-         {
-             anim.Play("Run");
-         }
-         if (Input.GetKeyUp(KeyCode.R))
-         {
-             anim.GetComponent<Animation>().Stop();
-         }
-         //jumping
-         if (Input.GetKey(KeyCode.Space))
-         {
-             Debug.Log("jump");
-             anim.Play("Big Jump");
-         }
-         if (Input.GetKeyUp(KeyCode.Space))
-         {
-             anim.GetComponent<Animation>().Stop();
-         }
+/* //Running
+ if (Input.GetKey(KeyCode.R))
+ {
+     anim.Play("Run");
+ }
+ if (Input.GetKeyUp(KeyCode.R))
+ {
+     anim.GetComponent<Animation>().Stop();
+ }
+ //jumping
+ if (Input.GetKey(KeyCode.Space))
+ {
+     Debug.Log("jump");
+     anim.Play("Big Jump");
+ }
+ if (Input.GetKeyUp(KeyCode.Space))
+ {
+     anim.GetComponent<Animation>().Stop();
+ }
 
-         //shoot
-         if (Input.GetButtonDown("Fire1"))
-         {
-             anim.Play("shoot");
-         }
-         if (Input.GetButtonUp("Fire1"))
-         {
-             anim.GetComponent<Animation>().Stop();
-         }
- */
+ //shoot
+ if (Input.GetButtonDown("Fire1"))
+ {
+     anim.Play("shoot");
+ }
+ if (Input.GetButtonUp("Fire1"))
+ {
+     anim.GetComponent<Animation>().Stop();
+ }
+*/
 
-        /*anim.SetBool("Walk", Input.GetKey(KeyCode.UpArrow));
-        anim.SetBool("Run", Input.GetKey(KeyCode.R));
-        anim.SetBool("Jump", Input.GetKey(KeyCode.Space));
-        anim.SetBool("Right", Input.GetKey(KeyCode.RightArrow));
-        anim.SetBool("Left", Input.GetKey(KeyCode.LeftArrow));
-        anim.SetBool("shoot", Input.GetButton("Fire1"));*/
-    }
+/*anim.SetBool("Walk", Input.GetKey(KeyCode.UpArrow));
+anim.SetBool("Run", Input.GetKey(KeyCode.R));
+anim.SetBool("Jump", Input.GetKey(KeyCode.Space));
+anim.SetBool("Right", Input.GetKey(KeyCode.RightArrow));
+anim.SetBool("Left", Input.GetKey(KeyCode.LeftArrow));
+anim.SetBool("shoot", Input.GetButton("Fire1"));*//*
 }
-/*void Update()
+}
+*//*void Update()
 {
    if(Input.GetMouseButtonUp(0))
   {
@@ -128,52 +177,4 @@ public void Shoot()
     {
        GetComponent<Animation>().Play();
     }
-}*/
-/*using System.Collections;
-using System.Collections.Generic;
-using Mirror;
-using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.InputSystem;
-
-public class UnitMovement : NetworkBehaviour
-{
-    [SerializeField] private NavMeshAgent agent = null;
-
-    private Camera mainCamera;
-
-    #region Server
-
-    [Command]
-    private void CmdMove(Vector3 position)
-    {
-        if (!NavMesh.SamplePosition(position, out NavMeshHit hit, 1f, NavMesh.AllAreas)) { return; }
-
-        agent.SetDestination(hit.position);
-    }
-
-    #endregion
-
-    #region Client
-
-    public override void OnStartAuthority()
-    {
-        mainCamera = Camera.main;
-    }
-
-    [ClientCallback]
-    private void Update()
-    {
-        if (!hasAuthority) { return; }
-
-        if (!Mouse.current.rightButton.wasPressedThisFrame) { return; }
-
-        Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-
-        if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity)) { return; }
-
-        CmdMove(hit.point);
-    }
-
-    #endregion
 }*/

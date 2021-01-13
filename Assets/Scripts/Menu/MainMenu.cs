@@ -69,7 +69,7 @@ public class MainMenu : MonoBehaviour
 
         SteamMatchmaking.SetLobbyData(
             new CSteamID(callback.m_ulSteamIDLobby),
-            "76561199128759029",
+            "hostAddress",
             SteamUser.GetSteamID().ToString());
     }
 
@@ -84,15 +84,15 @@ public class MainMenu : MonoBehaviour
 
         string hostAddress = SteamMatchmaking.GetLobbyData(
             new CSteamID(callback.m_ulSteamIDLobby),
-            "76561199128759029");
+            "hostAddress");
 
         NetworkManager.singleton.networkAddress = hostAddress;
         NetworkManager.singleton.StartClient();
 
         landingPagePanel.SetActive(false);
     }
-}
-*/
+}*/
+
 
 
 

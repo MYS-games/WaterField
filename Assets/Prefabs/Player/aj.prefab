@@ -910,7 +910,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2721601254487227215}
-  - component: {fileID: 8297105230844797237}
   - component: {fileID: 1196275023020332769}
   - component: {fileID: 3215564708453052591}
   - component: {fileID: 528189775854924888}
@@ -925,7 +924,7 @@ GameObject:
   - component: {fileID: 5240650956621960006}
   - component: {fileID: -2460925921636905166}
   - component: {fileID: 1288653441382140422}
-  - component: {fileID: -1274838841855382479}
+  - component: {fileID: 8263070053585544675}
   m_Layer: 0
   m_Name: aj
   m_TagString: Player
@@ -940,7 +939,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3354831284253204981}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 347.7894, y: 26.243526, z: 787.0805}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
@@ -951,28 +950,10 @@ Transform:
   - {fileID: 3142798184231366718}
   - {fileID: 2719593937309252678}
   - {fileID: 1517338603909973914}
+  - {fileID: 6720987056294928904}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!95 &8297105230844797237
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3354831284253204981}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 9918bca8700d97f419541f97875c664c, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1196275023020332769
 CharacterController:
   m_ObjectHideFlags: 0
@@ -982,7 +963,7 @@ CharacterController:
   m_GameObject: {fileID: 3354831284253204981}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5
@@ -1037,7 +1018,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1169,7 +1150,7 @@ MonoBehaviour:
   range: 50
   damage: 20
   cam: {fileID: 0}
-  myWaterTank: {fileID: 0}
+  myWaterTank: {fileID: 8794717607706217537}
 --- !u!23 &-2460925921636905166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1218,12 +1199,12 @@ CapsuleCollider:
   m_GameObject: {fileID: 3354831284253204981}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &-1274838841855382479
+--- !u!114 &8263070053585544675
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1232,11 +1213,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3354831284253204981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b916f669de29564cadcdd8f28c02796, type: 3}
+  m_Script: {fileID: 11500000, guid: 1aad5c1438a3b9f43a08a3d53b1e2e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxQuantity: 15
-  timeBetweenFill: 3
+  syncMode: 0
+  syncInterval: 0.1
+  throwForce: 40
+  balloonPrefab: {fileID: 765239556566204730, guid: febb8c8b703f75147a7a6ec03c39baae,
+    type: 3}
+  balloonSpawner: {fileID: 5811466407821218365}
 --- !u!1 &3383983102646834171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,6 +2312,36 @@ Transform:
   - {fileID: 6745757225671752916}
   m_Father: {fileID: 2183070116860839354}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5811466407821218365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6720987056294928904}
+  m_Layer: 0
+  m_Name: BalloonSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6720987056294928904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811466407821218365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.55, z: 3.18}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 2721601254487227215}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5942032944899721426
 GameObject:

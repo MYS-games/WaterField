@@ -1,21 +1,22 @@
-﻿using System.Collections;
+﻿using Mirror;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthDisplay : MonoBehaviour
+public class HealthDisplay : NetworkBehaviour
 {
     [SerializeField] private Health health = null;
     [SerializeField] private Image healthBar = null;
-   // private Image myHealthBar = null;
+    private Image myHealthBar = null;
     private Image[] healthImages;
 
     private void Awake()
     {
         health.ClientOnHealthUpdated += ImageUpdateUI;
-      /*  GameObject obj = GameObject.Find("MyHealthBar");
+        GameObject obj = GameObject.Find("MyHealthBar");
         healthImages = obj.GetComponentsInChildren<Image>();
-        myHealthBar = healthImages[1];*/
+        myHealthBar = healthImages[1];
 
 
 
@@ -29,6 +30,10 @@ public class HealthDisplay : MonoBehaviour
     private void ImageUpdateUI(int currentHealth, int maxHealth)
     {
         healthBar.fillAmount = (float)currentHealth / maxHealth;
-      //  myHealthBar.fillAmount = (float)currentHealth / maxHealth;
+        if (hasAuthority)
+        {
+            myHealthBar.fillAmount = (float)currentHealth / maxHealth;
+        }
+        
     }
 }

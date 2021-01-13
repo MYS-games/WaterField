@@ -121,6 +121,41 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &6609354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2808669069719560664, guid: 80c5bab5eb2f3394bb5f656bbf664dc0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2808669069762479059}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6609357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6609354}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea368fb6f27ec2f40a40e20977992b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Channels: 02000000
+  Timeout: 25
+  SteamAppID: 480
+  AllowSteamRelay: 1
+  SteamUserID: 0
+--- !u!114 &6609358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6609354}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef4bffeda13d7a748973ff9204401c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &59408209
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +311,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2808669069762479059}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6609354}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
@@ -398,12 +433,12 @@ PrefabInstance:
     - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
       propertyPath: theActualPlayer
       value: 
-      objectReference: {fileID: 6417654637126726861, guid: 09eb19ae5a6a74d469c0c0d9964e80dc,
+      objectReference: {fileID: 6417654637126726861, guid: 5d3d20410c74a4e4abd0a417ab02c019,
         type: 3}
     - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
       propertyPath: spawnPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 6417654637126726861, guid: 09eb19ae5a6a74d469c0c0d9964e80dc,
+      objectReference: {fileID: 6417654637126726861, guid: 5d3d20410c74a4e4abd0a417ab02c019,
         type: 3}
     - target: {fileID: 43196941, guid: 80c5bab5eb2f3394bb5f656bbf664dc0, type: 3}
       propertyPath: gameOverPrefab
