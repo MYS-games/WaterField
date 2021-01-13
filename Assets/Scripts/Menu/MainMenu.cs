@@ -1,25 +1,4 @@
-﻿using Mirror;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class MainMenu : MonoBehaviour
-{
-    [SerializeField] private GameObject firstPage = null;
-
-    public void HostLobby()
-    {
-        firstPage.SetActive(false);
-
-        NetworkManager.singleton.StartHost();
-    }
-}
-
-
-
-
-/*
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using Steamworks;
@@ -91,12 +70,27 @@ public class MainMenu : MonoBehaviour
 
         landingPagePanel.SetActive(false);
     }
+}
+
+
+
+
+/*using Mirror;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MainMenu : MonoBehaviour
+{
+    [SerializeField] private GameObject firstPage = null;
+
+    public void HostLobby()
+    {
+        firstPage.SetActive(false);
+
+        NetworkManager.singleton.StartHost();
+    }
 }*/
-
-
-
-
-
 
 
 
